@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index(){
-        //tambah data user dengan Eloquent Model
-        //$data = [
-           // 'level_id' => 2,
-            //'username' => 'manager_tiga',
-            //'nama' => 'Manager 3',
-            //'password' => Hash::make('12345')
-        //];
-        //UserModel::create($data);
-
         //coba akses model UserMoodel
-        $user = UserModel::where('level_id', 2)->count(); //ambil semua data dari tabel m_user
+        $user = UserModel::firstOrNew(
+            [
+                'username' => 'manager33',
+                'nama' => 'Manager Tiga Tiga',
+                'password' => Hash::make('12345'),
+                'level_id' => 2
+            ],
+        );
+        $user->save();
+        //ambil semua data dari tabel m_user
         return view('user', ['data' => $user]);
 }
 }
