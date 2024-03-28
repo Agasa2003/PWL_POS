@@ -4,6 +4,7 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
 use App\Models\User;
 
 Route::get('/', function () {
@@ -21,3 +22,4 @@ Route::get('/user/ubah/{id}', [UserController::class, 'hapus']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/kategori/create', [KategoriController::class, 'create']);
 Route::post('/kategori', [KategoriController::class, 'store']);
+Route::get('/', [WelcomeController::class,'index']);
