@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\LogoutController;
+use App\Http\Controllers\Api\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,9 @@ Route::get('levels', [LevelController::class, 'index']);
     Route::get('levels/{level}', [LevelController::class, 'show']);
     Route::put('levels/{level}', [LevelController::class, 'update']);
     Route::delete('levels/{level}', [LevelController::class, 'destroy']);
+
+    Route::get('penjualan', [PenjualanController::class, 'index']);
+    Route::post('penjualan', [PenjualanController::class, 'store']);
+    Route::get('penjualan/{penjualan}', [PenjualanController::class, 'show']);
+    Route::put('penjualan/{penjualan}', [PenjualanController::class, 'update']);
+    Route::delete('penjualan/{penjualan}', [PenjualanController::class, 'destroy']);
